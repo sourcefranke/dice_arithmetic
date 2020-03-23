@@ -1,0 +1,8 @@
+*.class
+*.gradle
+.project
+.classpath
+.settings
+/bin
+/target
+/kotlin_bin
