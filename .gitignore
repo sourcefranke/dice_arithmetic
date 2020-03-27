@@ -1,8 +1,10 @@
 *.class
-*.gradle
 .project
 .classpath
 .settings
 /bin
 /target
 /kotlin_bin
+/.idea/
+/rpg-dice-arithmetics.iml
+/rpg_dice_arithmetics.iml
