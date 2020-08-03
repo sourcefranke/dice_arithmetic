@@ -3,7 +3,7 @@ package com.github.sourcefranke.rpgdicearith
 import org.junit.jupiter.api.Test
 import org.assertj.core.api.Assertions.*
 
-class RpgDiceArithmeticsTest {
+class DiceArithmeticTest {
 
 	@Test
 	fun `"rollDiceResult" returns the final result for a dice formula`() {

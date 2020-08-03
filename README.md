@@ -1,1 +1,1 @@
-# rpg_dice_arithmetics
+# ice_arithmetic
