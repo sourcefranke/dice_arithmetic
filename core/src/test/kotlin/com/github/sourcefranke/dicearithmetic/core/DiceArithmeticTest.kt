@@ -1,4 +1,4 @@
-package com.github.sourcefranke.dicearithmetic
+package com.github.sourcefranke.dicearithmetic.core
 
 import org.junit.jupiter.api.Test
 import org.assertj.core.api.Assertions.*

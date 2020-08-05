@@ -1,10 +1,10 @@
-package com.github.sourcefranke.dicearithmetic.elements
+package com.github.sourcefranke.dicearithmetic.core.elements
 
 import org.assertj.core.api.Assertions.*
 import org.junit.jupiter.api.Test
 import org.mockito.Mockito.*
 
-class AdditionTest {
+class MultiplicationTest {
 
     @Test
     fun `test all the different methods once`() {
@@ -19,11 +19,11 @@ class AdditionTest {
         `when`(second.getResult()).thenReturn(7)
         `when`(second.getMax()).thenReturn(8)
 
-        val element = Addition(first, second)
+        val element = Multiplication(first, second)
 
         // Evaluate output
-        assertThat(element.getMin()).isEqualTo(9)
-        assertThat(element.getResult()).isEqualTo(11)
-        assertThat(element.getMax()).isEqualTo(13)
+        assertThat(element.getMin()).isEqualTo(18)
+        assertThat(element.getResult()).isEqualTo(28)
+        assertThat(element.getMax()).isEqualTo(40)
     }
 }

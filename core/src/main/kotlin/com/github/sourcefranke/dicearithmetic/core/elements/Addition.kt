@@ -1,4 +1,4 @@
-package com.github.sourcefranke.dicearithmetic.elements
+package com.github.sourcefranke.dicearithmetic.core.elements
 
 class Addition (private val first: Element, private val second: Element): Element {
 

@@ -1,6 +1,7 @@
-package com.github.sourcefranke.dicearithmetic
+package com.github.sourcefranke.dicearithmetic.core
 
-import com.github.sourcefranke.dicearithmetic.elements.*
+import com.github.sourcefranke.dicearithmetic.core.elements.*
+import com.github.sourcefranke.dicearithmetic.core.elements.Number
 
 
 fun rollDiceResult(formula: String): Int = getElement(shorten(formula)).getResult()
@@ -9,11 +10,11 @@ fun shorten(string: String): String = string.replace("\\s".toRegex(), "")
 
 fun getElement(string: String): Element =
 	when {
-		isAddition(string)			-> createAddition(string)
-		isMultiplication(string)	-> createMultiplication(string)
-		isMultipleDices(string)		-> getMultipleDices(string)
-		isSingleDice(string)		-> Dice(string.substring(1))
-		isSingleNumber(string)		-> Number(string)
+		isAddition(string) -> createAddition(string)
+		isMultiplication(string) -> createMultiplication(string)
+		isMultipleDices(string) -> getMultipleDices(string)
+		isSingleDice(string) -> Dice(string.substring(1))
+		isSingleNumber(string) -> Number(string)
 		else						-> throw Exception()
 	}
 
