@@ -1,0 +1,3 @@
+rootProject.name = 'dice-arithmetic'
+include 'core'
+include 'web'

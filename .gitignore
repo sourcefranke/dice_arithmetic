@@ -1,8 +1,6 @@
-.project
-.classpath
-.settings
-.gradle
-/bin
-/build
-*/build
-/.idea/
+# Gradle
+**/.gradle
+**/build
+
+# IntelliJ
+/.idea

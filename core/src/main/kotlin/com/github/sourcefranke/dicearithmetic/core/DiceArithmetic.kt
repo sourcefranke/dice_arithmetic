@@ -1,56 +1,34 @@
 package com.github.sourcefranke.dicearithmetic.core
 
-import com.github.sourcefranke.dicearithmetic.core.elements.*
-import com.github.sourcefranke.dicearithmetic.core.elements.Number
+/**
+ * Data object holding the result of a dice roll based on a given formula
+ * @param formula string describing dice and arithmetic operations to be used
+ * @param min minimum possible result for the given formula
+ * @param max maximum possible result for the given formula
+ * @param resultList list of results for the given formula
+ */
+data class Result(val formula: String, val min: Int, val max: Int, val resultList: List<Int>)
 
-
-fun rollDiceResult(formula: String): Int = getElement(shorten(formula)).getResult()
-
-fun shorten(string: String): String = string.replace("\\s".toRegex(), "")
-
-fun getElement(string: String): Element =
-	when {
-		isAddition(string) -> createAddition(string)
-		isMultiplication(string) -> createMultiplication(string)
-		isMultipleDices(string) -> getMultipleDices(string)
-		isSingleDice(string) -> Dice(string.substring(1))
-		isSingleNumber(string) -> Number(string)
-		else						-> throw Exception()
-	}
-
-
-fun isAddition(string: String): Boolean = string.matches(Regex(".*\\+.*"))
-
-fun createAddition(string: String): Element {
-	val list = string.split("+")
-	return Addition(getElement(list[0]), getElement(list[1]))
+/**
+ * Executes dice rolls based on the given formula
+ * @param formula string
+ * @param times number of rolls to be executed
+ * @return object holding the results of the dice rolls defined by the given formula
+ * @throws ConverterException
+ * @throws IllegalArgumentException
+ */
+fun rollDice(formula: String, times: Int = 1): Result {
+    val e = toElement(formula)
+    return Result(formula, e.min(), e.max(), e.resultList(times))
 }
 
-
-fun isMultiplication(string: String): Boolean = string.matches(Regex(".*\\*.*"))
-
-fun createMultiplication(string: String): Element {
-	val list = string.split("*")
-	return Multiplication(getElement(list[0]), getElement(list[1]))
+/**
+ * Shortens a given string
+ * @param s string to be shortened
+ * @return shortened string
+ */
+fun shorten(s: String): String {
+    val regex = Regex("\\s")
+    return if (s.contains(regex)) s.replace(regex, "")
+        else s
 }
-
-
-fun isMultipleDices(string: String): Boolean = string.matches(Regex("[0-9]+[d][0-9]+"))
-
-fun getMultipleDices(string: String): Element {
-	val list = string.split("d")
-
-	val repeats = list[0].toInt() - 1
-	val diceMax = list[1].toInt()
-
-	var element = Addition(Number(0), Dice(diceMax))
-	repeat(repeats) {
-		element = Addition(element, Dice(diceMax))
-	}
-	return element
-}
-
-
-fun isSingleDice(string: String): Boolean = string.matches(Regex("[d][0-9]+"))
-
-fun isSingleNumber(string: String): Boolean = string.matches(Regex("[0-9]+"))
