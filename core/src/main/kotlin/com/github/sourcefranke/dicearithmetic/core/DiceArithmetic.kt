@@ -5,9 +5,9 @@ package com.github.sourcefranke.dicearithmetic.core
  * @param formula string describing dice and arithmetic operations to be used
  * @param min minimum possible result for the given formula
  * @param max maximum possible result for the given formula
- * @param resultList list of results for the given formula
+ * @param results list of results for the given formula
  */
-data class Result(val formula: String, val min: Int, val max: Int, val resultList: List<Int>)
+data class Result(val formula: String, val min: Int, val max: Int, val results: List<Int>)
 
 /**
  * Executes dice rolls based on the given formula

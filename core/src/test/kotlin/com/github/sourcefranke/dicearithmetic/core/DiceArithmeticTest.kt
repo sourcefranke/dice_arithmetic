@@ -15,7 +15,7 @@ class DiceArithmeticTest : ShouldSpec({
 			result.formula shouldBe "7"
 			result.max shouldBe 7
 			result.min shouldBe 7
-			result.resultList shouldBe listOf(7)
+			result.results shouldBe listOf(7)
 		}
 
 		should("4 + 7") {
@@ -23,7 +23,7 @@ class DiceArithmeticTest : ShouldSpec({
 			result.formula shouldBe "4 + 7"
 			result.max shouldBe 11
 			result.min shouldBe 11
-			result.resultList shouldBe listOf(11)
+			result.results shouldBe listOf(11)
 		}
 
 		should("4d2 + 1") {
@@ -33,7 +33,7 @@ class DiceArithmeticTest : ShouldSpec({
 			result.formula shouldBe "4d2 + 1"
 			result.max shouldBe 9
 			result.min shouldBe 5
-			assertThat(result.resultList).all {
+			assertThat(result.results).all {
 				hasSize(5)
 				containsOnly(8, 8, 6, 8, 7)
 			}

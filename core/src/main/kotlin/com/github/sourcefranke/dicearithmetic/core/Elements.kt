@@ -23,12 +23,12 @@ interface Element {
 
     /**
      * Executes the dice roll a several number of times
-     * @param rolls number of rolls to be executed
+     * @param times number of rolls to be executed
      * @return list of results for the predefined dice roll
      */
-    fun resultList(rolls: Int): List<Int> {
+    fun resultList(times: Int): List<Int> {
         val result = mutableListOf<Int>()
-        repeat(rolls) {
+        repeat(times) {
             result.add(roll())
         }
         return result
