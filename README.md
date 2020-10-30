@@ -7,7 +7,7 @@ Examples
 These are examples for dice formula and all their possible results:
 
 | Formula | Possible results |
-| --- | --- | 
+| :---: | --- | 
 | d6 | 1, 2, 3, 4, 5, 6 |
 | d8 | 1, 2, 3, 4, 5, 6, 7, 8 |
 | d6 + 3 | 4, 5, 6, 7, 8, 9 |
@@ -59,8 +59,7 @@ By writing two number, like seen here:
 ... you then define both a minimum and a maximum number for the defined range.
 
 #### Range
-Speaking of range ... analog to primes I could introduce a term for it:
-> range[ 100 ]  
+Speaking of range ... analog to primes I could introduce a term for just using every number within borders:
 > range[ 50, 100 ]
 
 #### Weighted probabilities
@@ -84,4 +83,4 @@ As you might know:
 > 2 + (d6 * 4)
 
 ### Custom Extensions
-Extending the core functionalities without overriding existing methods
+I still need to invest some brain power into a smooth possibility of providing a way of extending the core functionalities to other developers ... without overriding existing methods.
