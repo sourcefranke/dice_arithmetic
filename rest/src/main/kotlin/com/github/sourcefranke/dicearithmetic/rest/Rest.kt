@@ -1,4 +1,4 @@
-package com.github.sourcefranke.dicearithmetic.web
+package com.github.sourcefranke.dicearithmetic.rest
 
 import com.fasterxml.jackson.databind.SerializationFeature
 import com.github.sourcefranke.dicearithmetic.core.rollDice
@@ -10,7 +10,7 @@ import io.ktor.jackson.*
 import io.ktor.response.*
 import io.ktor.server.engine.*
 
-fun Application.mainModule() {
+fun Application.restModule() {
     install(ContentNegotiation) {
         jackson {
             enable(SerializationFeature.INDENT_OUTPUT)
@@ -39,5 +39,5 @@ fun Application.mainModule() {
 }
 
 fun main() {
-    embeddedServer(Netty, 8080, module = Application::mainModule).start()
+    embeddedServer(Netty, 8080, module = Application::restModule).start()
 }
