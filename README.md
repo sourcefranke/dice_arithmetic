@@ -1,10 +1,10 @@
 Dice Arithmetic
 ===
-This code is about computing the result of arithmetic operations based on dice throws.
+This project is about computing the result of arithmetic operations including dice rolls based on a formula string.
 
 Examples
 ---
-These are examples for dice formula and all their possible results:
+These are some example formulas and all their possible results:
 
 | Formula | Possible results |
 | :---: | --- | 
