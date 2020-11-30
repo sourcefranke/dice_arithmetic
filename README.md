@@ -18,10 +18,11 @@ These are some example formulas and all their possible results:
 
 Project structure
 ---
-The overall project consists of two subprojects
+The overall project consists of two subprojects.
 
 ### Core
 Here all the core functionality can be found.
+The main entry point for calling the whole function is the ***rollDice*** function in [DiceArithmetic.kt](core/src/main/kotlin/com/github/sourcefranke/dicearithmetic/core/DiceArithmetic.kt).
 
 ### Rest
 This subproject offers the possibility to deploy and run the software as a microservice, offering some basic REST interface.
@@ -33,12 +34,26 @@ The REST API currently contains:
 | /api/roll/{formula} | GET | formula - string defining the arithmetic operations |
 | /api/roll/{times}/{formula} | GET | times - number of rolls to be executed <br> formula - string defining the arithmetic operations |
 
+#### Example
+If you start the REST module by executing the main method, you can call e.g. the following link with your preferred web browser:
+http://localhost:8080/api/roll/5/d6
+
+One possible response you could see in your browser tab could look like:
+```json
+{
+  "formula" : "d6",
+  "min" : 1,
+  "max" : 6,
+  "results" : [ 6, 1, 3, 4, 3 ]
+}
+```
+
 Roadmap
 ---
 I already thought of some possible advancements I could implement in the near future!
 
 ### Subtraction
-Yes, I know, one basic arithmetic operation is still missing ... coming soon! 
+Yes, I know, this one basic arithmetic operation is still missing ... coming soon! 
 
 ### Explicit listing of dice values
 By writing e.g. ...
@@ -56,7 +71,7 @@ Writing ...
 By writing two number, like seen here:
 > prime[ 50, 100 ]
 
-... you then define both a minimum and a maximum number for the defined range.
+... you then define both a minimum, and a maximum number for the defined range.
 
 #### Range
 Speaking of range ... analog to primes I could introduce a term for just using every number within borders:
