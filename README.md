@@ -2,6 +2,12 @@ Dice Arithmetic
 ===
 This project is about computing the result of arithmetic operations including dice rolls based on a formula string.
 
+Table of Contents
+---
+- [Examples](#examples)
+- [Project structure](#project-structure)
+- [Roadmap](#roadmap)
+
 Examples
 ---
 These are some example formulas and all their possible results:
@@ -18,7 +24,10 @@ These are some example formulas and all their possible results:
 
 Project structure
 ---
-The overall project consists of two subprojects.
+The overall project consists of several subprojects:
+
+- [Core](#core)
+- [Rest](#rest)
 
 ### Core
 Here all the core functionality can be found.
@@ -27,6 +36,7 @@ The main entry point for calling the whole function is the ***rollDice*** functi
 ### Rest
 This subproject offers the possibility to deploy and run the software as a microservice, offering some basic REST interface.
 
+#### API
 The REST API currently contains:
 
 | URL | HTTP method | Parameters |
@@ -52,10 +62,15 @@ Roadmap
 ---
 I already thought of some possible advancements I could implement in the near future!
 
+- [Subtraction](#core)
+- [Explicit listing](#explicit-listing)
+- [Brackets](#brackets)
+- [Custom Extensions](#custom-extensions)
+
 ### Subtraction
 Yes, I know, this one basic arithmetic operation is still missing ... coming soon! 
 
-### Explicit listing of dice values
+### Explicit listing
 By writing e.g. ...
 > d[ 6, 13, 25, 42 ]
 
