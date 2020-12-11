@@ -4,11 +4,11 @@ This project is about computing the result of arithmetic operations including di
 
 Table of Contents
 ---
-- [Examples](#examples)
+- [Example formula](#example-formula)
 - [Project structure](#project-structure)
 - [Roadmap](#roadmap)
 
-Examples
+Example formula
 ---
 These are some example formulas and all their possible results:
 
@@ -48,7 +48,7 @@ The REST API currently contains:
 If you start the REST module by executing the main method, you can call e.g. the following link with your preferred web browser:
 http://localhost:8080/api/roll/5/d6
 
-One possible response you could see in your browser tab could look like:
+A possible response could look like this:
 ```json
 {
   "formula" : "d6",
@@ -62,10 +62,18 @@ Roadmap
 ---
 I already thought of some possible advancements I could implement in the near future!
 
+- [Command-line Interface](#command-line-interface)
+- [Web UI](#web-ui)
 - [Subtraction](#core)
 - [Explicit listing](#explicit-listing)
 - [Brackets](#brackets)
 - [Custom Extensions](#custom-extensions)
+
+### Command-line Interface
+Just to find out, how it works ;)
+
+### Web UI
+... with some nice looking, colorful buttons - you know :D
 
 ### Subtraction
 Yes, I know, this one basic arithmetic operation is still missing ... coming soon! 
